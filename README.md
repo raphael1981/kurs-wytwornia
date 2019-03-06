@@ -1,6 +1,6 @@
 # Wypełnianie bazy przykładowymi danymi
 
-##instalacja zależności
+## instalacja zależności
 ```composer log
 composer install
 ```
@@ -17,7 +17,7 @@ php composer.phar install
 }
 ```
 
-##konfigurcja połącznia z bazą
+## konfigurcja połącznia z bazą
 ```php
 //plik products.php
 $db = new MysqliDb(
@@ -36,11 +36,11 @@ $db = new MysqliDb(
 );
 ```
 
-##pliki z zapytaniami tworzącymi strukturę bazy
-####base_products.sql
-####base_schools.sql
+## pliki z zapytaniami tworzącymi strukturę bazy
+#### base_products.sql
+#### base_schools.sql
 
-##uruchomienie wytwórni
+## uruchomienie wytwórni
 ```composer log
 php products.php
 ```

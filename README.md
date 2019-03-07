@@ -4,7 +4,7 @@
 ```composer log
 composer install
 ```
-lub (kiedy pobieramy komposer z https://getcomposer.org/download/)
+lub (kiedy pobieramy composer z https://getcomposer.org/download/)
 ```composer log
 php composer.phar install
 ```

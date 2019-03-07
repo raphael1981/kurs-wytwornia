@@ -9,6 +9,8 @@ lub (kiedy pobieramy composer z https://getcomposer.org/download/)
 php composer.phar install
 ```
 
+## konfigurcja połącznia serverem baz danych
+plik connect.json
 ```json
 {
   "host":"localhost",

@@ -36,11 +36,19 @@ $db = new MysqliDb(
     $connData->password,
     'NAZWA_BAZY'
 );
+//plik blog.php
+$db = new MysqliDb(
+    $connData->host,
+    $connData->username,
+    $connData->password,
+    'NAZWA_BAZY'
+);
 ```
 
 ## pliki z zapytaniami tworzącymi strukturę bazy
 #### base_products.sql
 #### base_schools.sql
+#### base_blog.sql
 
 ## uruchomienie wytwórni
 ```composer log
@@ -49,4 +57,8 @@ php products.php
 
 ```composer log
 php schools.php
+```
+
+```composer log
+php blog.php
 ```

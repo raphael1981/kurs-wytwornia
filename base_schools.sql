@@ -2,8 +2,8 @@ CREATE TABLE `schools` (
   `id` int(10) UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `name` varchar(10) NOT NULL,
   `registration_number` varchar(10) NOT NULL UNIQUE,
-  `created_at` timestamp NULL,
   `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `created_at` timestamp NULL,
    CONSTRAINT `unique_registration number` UNIQUE (`id`,`registration_number`)
 );
 
@@ -11,8 +11,8 @@ CREATE TABLE `classes` (
   `id` int(10) UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `school_id` int(10) UNSIGNED NOT NULL,
   `class_number` varchar(255) NOT NULL UNIQUE,
-  `created_at` timestamp NULL,
   `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `created_at` timestamp NULL,
    CONSTRAINT `unique_class_number` UNIQUE (`id`,`class_number`)
 );
 
@@ -24,8 +24,8 @@ CREATE TABLE `students` (
   `name` varchar(10) NOT NULL,
   `surname` varchar(255) NOT NULL,
   `email` varchar(100) NOT NULL UNIQUE,
-  `created_at` timestamp NULL,
   `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `created_at` timestamp NULL,
    CONSTRAINT `unique_student` UNIQUE (`id`,`email`)
 );
 

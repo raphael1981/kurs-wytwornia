@@ -33,12 +33,14 @@ for($i=0;$i<20;$i++){
 
 }
 
+$uCount = count($db->get('users'));
 
 for($i=0;$i<300;$i++){
 
     $title = $faker->unique()->firstName;
 
     $array = [
+        'user_id'=>$faker->numberBetween(1,$uCount),
         'title'=>$title,
         'alias'=>$slugify->slugify($title),
         'intro'=>$faker->sentence(5),
@@ -52,6 +54,8 @@ for($i=0;$i<300;$i++){
     echo $id;
 
 }
+
+
 
 for($i=0;$i<50;$i++){
 
@@ -74,12 +78,12 @@ foreach ($db->get('posts') as $p){
 
         if((boolean) $faker->numberBetween(0,1)){
             $db->insert('tags_posts',[
-                'tag_id'=>$p['id'],
-                'post_id'=>$t['id']
+                'tag_id'=>$t['id'],
+                'post_id'=>$p['id']
             ]);
             print_r([
-                'tag_id'=>$p['id'],
-                'post_id'=>$t['id']
+                'tag_id'=>$t['id'],
+                'post_id'=>$p['id']
             ]);
         }
 

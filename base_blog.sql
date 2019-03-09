@@ -11,6 +11,7 @@ CREATE TABLE `users` (
 
 CREATE TABLE `posts` (
   `id` int(10) UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `user_id` int(10) UNSIGNED NULL,
   `title` varchar(500) NULL,
   `alias` varchar(500) NULL,
   `intro` text NULL,
@@ -20,6 +21,7 @@ CREATE TABLE `posts` (
   `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
 );
 
+ALTER TABLE `posts` ADD FOREIGN KEY (`user_id`) REFERENCES `users`(`id`) ON DELETE CASCADE ON UPDATE RESTRICT;
 
 CREATE TABLE `tags` (
   `id` int(10) UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,

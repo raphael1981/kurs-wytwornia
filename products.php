@@ -18,7 +18,7 @@ for($i=0;$i<20;$i++){
 
 
     $array = [
-        'name'=>$faker->unique()->city,
+        'name'=>$faker->unique()->country,
         'created_at'=>date('Y-m-d H:i:s')
     ];
 

@@ -1,0 +1,1 @@
+SELECT * FROM `users` WHERE `email` REGEXP '^[0-9a-z_.-]+@[0-9a-z.-]+\\.[a-z]{2,3}$'

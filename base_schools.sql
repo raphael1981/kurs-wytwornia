@@ -1,7 +1,7 @@
 CREATE TABLE `schools` (
   `id` int(10) UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  `name` varchar(10) NOT NULL,
-  `registration_number` varchar(10) NOT NULL UNIQUE,
+  `name` varchar(100) NOT NULL,
+  `registration_number` varchar(100) NOT NULL UNIQUE,
   `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `created_at` timestamp NULL,
    CONSTRAINT `unique_registration number` UNIQUE (`id`,`registration_number`)

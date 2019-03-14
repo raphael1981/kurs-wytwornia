@@ -7,7 +7,7 @@ CREATE TABLE `users` (
   `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `created_at` timestamp NULL,
    CONSTRAINT `unique_email` UNIQUE (`id`,`email`)
-);
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 CREATE TABLE `posts` (
   `id` int(10) UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -19,7 +19,7 @@ CREATE TABLE `posts` (
   `status` enum('created','confirmed','canceled') DEFAULT 'created',
   `created_at` timestamp NULL,
   `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
-);
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 ALTER TABLE `posts` ADD FOREIGN KEY (`user_id`) REFERENCES `users`(`id`) ON DELETE CASCADE ON UPDATE RESTRICT;
 
@@ -30,7 +30,7 @@ CREATE TABLE `tags` (
   `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `created_at` timestamp NULL,
    CONSTRAINT `unique_tag` UNIQUE (`id`,`alias`)
-);
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 CREATE TABLE `tags_posts` (
   `tag_id` int(10) UNSIGNED NOT NULL,

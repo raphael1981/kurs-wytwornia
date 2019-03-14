@@ -5,7 +5,7 @@ CREATE TABLE `schools` (
   `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `created_at` timestamp NULL,
    CONSTRAINT `unique_registration number` UNIQUE (`id`,`registration_number`)
-);
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 CREATE TABLE `classes` (
   `id` int(10) UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -14,7 +14,7 @@ CREATE TABLE `classes` (
   `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `created_at` timestamp NULL,
    CONSTRAINT `unique_class_number` UNIQUE (`id`,`class_number`)
-);
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 ALTER TABLE `classes` ADD FOREIGN KEY (`school_id`) REFERENCES `schools`(`id`) ON DELETE CASCADE ON UPDATE RESTRICT;
 
@@ -27,7 +27,7 @@ CREATE TABLE `students` (
   `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `created_at` timestamp NULL,
    CONSTRAINT `unique_student` UNIQUE (`id`,`email`)
-);
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 ALTER TABLE `students` ADD FOREIGN KEY (`class_id`) REFERENCES `classes`(`id`) ON DELETE CASCADE ON UPDATE RESTRICT;
 
@@ -38,6 +38,6 @@ CREATE TABLE `grades` (
   `number` float,
   `created_at` timestamp NULL,
   `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
-);
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 ALTER TABLE `grades` ADD FOREIGN KEY (`student_id`) REFERENCES `students`(`id`) ON DELETE SET NULL ON UPDATE RESTRICT;

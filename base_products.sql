@@ -5,7 +5,7 @@ CREATE TABLE `categories` (
   `name` varchar(255) NOT NULL,
   `updated_at` timestamp ON UPDATE CURRENT_TIMESTAMP,
   `created_at` timestamp NULL
-);
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 CREATE TABLE `products` (
@@ -17,7 +17,7 @@ CREATE TABLE `products` (
   `status` tinyint(4) NOT NULL DEFAULT '0',
   `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `created_at` timestamp NULL
-);
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 ALTER TABLE `products` ADD FOREIGN KEY (`category_id`) REFERENCES `categories`(`id`) ON DELETE SET NULL ON UPDATE RESTRICT;
 
